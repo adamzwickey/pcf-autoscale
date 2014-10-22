@@ -1,6 +1,4 @@
-cf-scale-demo
 =============
-=======
 pcf-autoscale
 =============
 
