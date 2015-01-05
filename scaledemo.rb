@@ -16,6 +16,7 @@
      ENV['APP_DISK'] = app_info["limits"] ? app_info["limits"]["disk"].to_s : " "
      ENV['APP_IP'] = IPSocket.getaddress(Socket.gethostname)
      ENV['APP_PORT'] = app_info["port"].to_s
+     ENV['SERVICE_JSON'] = JSON.pretty_generate(JSON.parse(ENV['VCAP_SERVICES']))
      erb :'index'
   end
   

@@ -25,7 +25,7 @@
     	<tr><td><strong>Warden Container Port</strong></td><td th:text="${port}"><%= ENV['APP_PORT'] %></td></tr>
     	<tr class="info"><td><strong>Requests Serviced</strong></td><td><%= settings.requests %></td></tr>
         <tr><td><strong>Warden Container Port</strong></td><td th:text="${port}"><%= ENV['APP_PORT'] %></td></tr>
-        <tr><td><strong>VCAP_SERVICES</strong></td><td style="word-break:break-all;"><%= ENV['VCAP_SERVICES'] %></td></tr>
+        <tr><td><strong>VCAP_SERVICES</strong></td><td style="word-break:break-all;"><pre><%= ENV['SERVICE_JSON'] %></pre></td></tr>
     </table>
 
     <p style="text-align: center"><img src="img/LOGO_CloudFoundry_Large.png"/></p>
