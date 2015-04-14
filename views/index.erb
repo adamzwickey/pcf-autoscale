@@ -12,7 +12,7 @@
         <p>Powered by <a href="http://www.pivotal.io">Pivotal</a>!</p>
     </div>
 
-    <a href="/killSwitch" class="btn btn-danger btn-large">Kill Switch</a>
+    <a href="/killSwitch" class="btn btn-danger btn-large">Self Destruct</a>
 
     <h2>App Instance Info: </h2>
 
@@ -24,8 +24,8 @@
     	<tr><td><strong>Warden Container IP</strong></td><td th:text="${ipAddress}"><%= ENV['APP_IP'] %></td></tr>
     	<tr><td><strong>Warden Container Port</strong></td><td th:text="${port}"><%= ENV['APP_PORT'] %></td></tr>
     	<tr class="info"><td><strong>Requests Serviced</strong></td><td><%= settings.requests %></td></tr>
-        <tr><td><strong>Warden Container Port</strong></td><td th:text="${port}"><%= ENV['APP_PORT'] %></td></tr>
-        <tr><td><strong>VCAP_SERVICES</strong></td><td style="word-break:break-all;"><pre><%= ENV['SERVICE_JSON'] %></pre></td></tr>
+      <tr><td><strong>Warden Container Port</strong></td><td th:text="${port}"><%= ENV['APP_PORT'] %></td></tr>
+      <tr><td><strong>VCAP_SERVICES</strong></td><td style="word-break:break-all;"><pre><%= ENV['SERVICE_JSON'] %></pre></td></tr>
     </table>
 
     <p style="text-align: center"><img src="img/LOGO_CloudFoundry_Large.png"/></p>
