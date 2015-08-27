@@ -4,5 +4,4 @@ applications:
   memory: 128M
   instances: 1
   host: scale
-#  domain: cloudfoundry.dyndns.org
   path: .
