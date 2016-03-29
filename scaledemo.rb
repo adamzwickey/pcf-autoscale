@@ -11,13 +11,16 @@
   get '/' do
      settings.requests += 1
      app_info = ENV['VCAP_APPLICATION'] ? JSON.parse(ENV['VCAP_APPLICATION']) : Hash.new
+     services_info = ENV['VCAP_SERVICES'] ? ENV['VCAP_SERVICES'] : "{ }"
      ENV['APP_NAME'] = app_info["application_name"]
-     ENV['APP_INSTANCE'] = app_info["instance_index"].to_s
+     ENV['APP_INSTANCE_ID'] = app_info["instance_id"].to_s
+     ENV['APP_INSTANCE_INDEX'] = app_info["instance_index"].to_s
      ENV['APP_MEM'] = app_info["limits"] ? app_info["limits"]["mem"].to_s : " "
      ENV['APP_DISK'] = app_info["limits"] ? app_info["limits"]["disk"].to_s : " "
      ENV['APP_IP'] = IPSocket.getaddress(Socket.gethostname)
      ENV['APP_PORT'] = app_info["port"].to_s
-     ENV['SERVICE_JSON'] = JSON.pretty_generate(JSON.parse(ENV['VCAP_SERVICES']))
+     ENV['APP_START'] = app_info["started_at"].to_s
+     ENV['SERVICE_JSON'] = JSON.pretty_generate(JSON.parse(services_info))
      erb :'index'
   end
 
